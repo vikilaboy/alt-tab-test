@@ -26,7 +26,7 @@ class User extends APIModel implements AuthContract
         'email', 'name', 'password',
     ];
 
-    public function roles()
+    public function messages()
     {
         return $this->belongsToMany(Message::class)->withTimestamps();
     }
@@ -50,10 +50,12 @@ class User extends APIModel implements AuthContract
         return $user;
     }
 
-    public function update(array $attributes = [], array $options = [])
+    public function update(array $attributes = [])
     {
-        $updated = parent::update($attributes, $options);
+        $updated = parent::update($attributes);
 
         return $updated;
     }
 }
+
+
