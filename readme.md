@@ -1,21 +1,25 @@
-# Lumen PHP Framework
+# PHP Technical test
 
-[![Build Status](https://travis-ci.org/laravel/lumen-framework.svg)](https://travis-ci.org/laravel/lumen-framework)
-[![Total Downloads](https://poser.pugx.org/laravel/lumen-framework/d/total.svg)](https://packagist.org/packages/laravel/lumen-framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/lumen-framework/v/stable.svg)](https://packagist.org/packages/laravel/lumen-framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/lumen-framework/v/unstable.svg)](https://packagist.org/packages/laravel/lumen-framework)
-[![License](https://poser.pugx.org/laravel/lumen-framework/license.svg)](https://packagist.org/packages/laravel/lumen-framework)
+During this test you are supposed to create a simple API that will serve as the back-end for a potential mobile app. The requirements of this API are:
 
-Laravel Lumen is a stunningly fast PHP micro-framework for building web applications with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Lumen attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as routing, database abstraction, queueing, and caching.
+- The API should be built using the latest version of Laravel
+- All API returns should be JSON formatted and contain the appropiate HTML response codes
+- The users table should at least contain the following fields:
+  - name
+  - email address
+  - password
+- The API should have to following endpoints: (It is up to you to separate them into protected/unprotected endpoints)
+  - Add new user
+  - Authenticate user
+  - Get a list of all users
+  - Get any user's details
+  - Update current user details
+  - Deactivate current user account (should delete the user entry)
 
-## Official Documentation
 
-Documentation for the framework can be found on the [Lumen website](http://lumen.laravel.com/docs).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Lumen, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Lumen framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+Extra credit will be awarded for the following new tasks/endpoints (only if the required ones are completed)
+  - Task: Write tests for at least three of the previous endpoints
+  - Task: Create an additional model, controller and migration for a messages table. The messages table should contain user_id, message and the default timestamps fields.
+  - Endpoint: The current user can post a messsage
+  - Endpoint: Get a list of all the messages
+  - Endpoint: User can delete one of his messages by passing a messageID

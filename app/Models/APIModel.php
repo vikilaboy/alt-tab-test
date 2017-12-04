@@ -27,13 +27,13 @@ class APIModel extends Model
         return $model;
     }
 
-    public function update(array $attributes = [])
+    public function update(array $attributes = [], array $options = [])
     {
         if (!$this->validate($attributes)) {
             return false;
         }
 
-        return parent::update($attributes);
+        return parent::update($attributes, $options);
     }
 
     public function save(array $options = [])

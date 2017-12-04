@@ -50,9 +50,9 @@ class User extends APIModel implements AuthContract
         return $user;
     }
 
-    public function update(array $attributes = [])
+    public function update(array $attributes = [], array $options = [])
     {
-        $updated = parent::update($attributes);
+        $updated = parent::update($attributes, $options);
 
         return $updated;
     }
