@@ -11,17 +11,6 @@
 |
 */
 
-/*$router->get('/', function () use ($router) {
-    return response()->json(['app ver.' => $router->app->version()], \Illuminate\Http\Response::HTTP_OK);
-});
-
-$router->get('users', 'UserController@index');
-$router->get('users/{user}', 'UserController@show');
-$router->post('users', 'UserController@create');
-$router->put('users/{user}', 'UserController@update');
-$router->delete('users/{user}', 'UserController@delete');
-*/
-
 if (!function_exists('addResourceRoutes')) {
     function addResourceRoutes($app, $resource, $controller)
     {
@@ -34,7 +23,7 @@ if (!function_exists('addResourceRoutes')) {
 }
 
 $groupAttributes = [
-    'namespace' => 'V1',
+    'namespace' => 'App\Http\Controllers\V1',
     'prefix' => 'v1',
 ];
 $app->group($groupAttributes, function ($app)
