@@ -45,7 +45,7 @@ class TestCase extends Laravel\Lumen\Testing\TestCase
 
         Artisan::call('migrate');
 
-        $user = User::create([
+        User::create([
             'email' => 'victor@niculae.net',
             'name' => 'Administrator',
             'password' => 'admin',
