@@ -34,7 +34,7 @@ if (!function_exists('addResourceRoutes')) {
 }
 
 $groupAttributes = [
-    'namespace' => 'App\Http\Controllers\V1',
+    'namespace' => 'V1',
     'prefix' => 'v1',
 ];
 $app->group($groupAttributes, function ($app)

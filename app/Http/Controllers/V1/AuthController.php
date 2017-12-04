@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\V1;
 
-use App\Models\UserSecret;
 use Illuminate\Http\Request;
 use Laravel\Lumen\Routing\Controller;
 use Symfony\Component\HttpFoundation\Response;
@@ -76,30 +75,5 @@ class AuthController extends Controller
         ];
 
         return $result;
-    }
-
-    public function loginBySecret()
-    {
-        $userSecret = UserSecret::findBySecret($this->request->get('secret'));
-
-        $result = [
-            'error' => 'invalid_credentials'
-        ];
-
-        if (is_null($userSecret)) {
-            return response($result, Response::HTTP_UNAUTHORIZED);
-        }
-
-        $user = $userSecret->user;
-
-        $token = $this->auth->fromUser($user);
-
-        $userSecret->delete();
-
-        return [
-            'data' => [
-                'token' => $token,
-            ],
-        ];
     }
 }
